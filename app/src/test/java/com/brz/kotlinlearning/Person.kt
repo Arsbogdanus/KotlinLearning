@@ -1,13 +1,17 @@
 package com.brz.kotlinlearning
 
-data class Person(
+class Person(
     val name: String,
-    val age: Int? = null
+    var isMarried: Boolean
 ) {
-     fun main(args: Array<String>) {
-          val persons = listOf(Person("Alice"), Person("Bob", age = 29))
+    //    Классы содержащие только данные, без кода, часто называют объектами-значениями (value objects)
+//    Модификатор public по умолчанию, поэтому можно не указывать
+    fun main(args: Array<String>) {
+//        Конструктор выполняется без ключевого слова "new"
+        val person = Person("Bod", true)
 
-     val oldest = persons.maxBy { it.age ?: 0 }
-          println("The oldest is: $oldest")
-     }
+//        Прямое обращение к свойству, но при этом вызывается метод чтения
+        println(person.name)
+        println(person.isMarried)
+    }
 }
