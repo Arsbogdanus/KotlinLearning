@@ -26,20 +26,20 @@ class ExceptionInKotlin {
     }
 
     fun readNumber2(reader: BufferedReader) {
-        val numer = try {
+        val number = try {
             Integer.parseInt(reader.readLine())     // Получит значение выражения try
-        } catch (e: NumberFormatException){
+        } catch (e: NumberFormatException) {
             return
         }
-        println(numer)
+        println(number)
     }
 
     fun readNumber3(reader: BufferedReader) {
-        val numer = try {
+        val number = try {
             Integer.parseInt(reader.readLine())     // Получит значение выражения try
-        } catch (e: NumberFormatException){
+        } catch (e: NumberFormatException) {
             null
         }
-        println(numer)
+        println(number)
     }
 }
