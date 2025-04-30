@@ -21,6 +21,15 @@ class MyCollection<T> {
         println(joinToString(list, "; ", "(", ")"))      // Вызов метода joinToString()
         // (1; 2; 3)
 
+        println(
+            joinToStringDefaultParameters(
+                list,
+                separator = "; ",
+                prefix = "(",
+                postfix = ")"
+            )
+        )      // Именованные аргументы
+
         println(joinToStringDefaultParameters(list))      // Параметры по умолчанию
         println(
             joinToStringDefaultParameters(
