@@ -20,6 +20,17 @@ class MyCollection<T> {
         // [1, 2, 3]
         println(joinToString(list, "; ", "(", ")"))      // Вызов метода joinToString()
         // (1; 2; 3)
+
+        println(joinToStringDefaultParameters(list))      // Параметры по умолчанию
+        println(
+            joinToStringDefaultParameters(
+                list,
+                postfix = ";",
+                prefix = "# "
+            )
+        )      // Параметры по умолчанию
+        // # 1, 2, 3;
+
     }
 
     fun <T> joinToString(
@@ -27,6 +38,23 @@ class MyCollection<T> {
         separator: String,
         prefix: String,
         postfix: String
+    ): String {
+        val result = StringBuilder(prefix)
+
+        for ((index, element) in collection.withIndex()) {
+            if (index > 0) result.append(separator)
+            result.append(element)
+        }
+
+        result.append(postfix)
+        return result.toString()
+    }
+
+    fun <T> joinToStringDefaultParameters(
+        collection: Collection<T>,
+        separator: String = ", ",         // Параметры со значениями
+        prefix: String = "",              // по умолчанию
+        postfix: String = ""
     ): String {
         val result = StringBuilder(prefix)
 
