@@ -5,6 +5,4 @@ enum class CatFamily {
     LEOPARD,
     TIGER,
     LION;
-
-
 }
