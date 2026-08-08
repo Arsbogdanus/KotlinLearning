@@ -13,7 +13,7 @@ class SmartPrinter(private val basePrinter: Printer) : Printer by basePrinter {
 
     override fun printText(text: String) {
         pageCount++
-        println("Лог: Печатаем страницу №$pageCount")
+        println("Печатаем страницу №$pageCount")
 
         basePrinter.printText(text)
     }
